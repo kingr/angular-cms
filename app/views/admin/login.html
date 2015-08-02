@@ -1,0 +1,6 @@
+<div ng-controller="login.ctrl">
+  <button ng-click="login()">Login Anonymously</button>
+  
+  <p ng-if="authData">Logged in user: <strong>{{authData.uid}}</strong></p>
+  <p ng-if="error">Error: <strong>{{error}}</strong></p>
+</div>

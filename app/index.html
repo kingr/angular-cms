@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electric Motorcycle Blog</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="js/animations.js"></script>
+
+  <!-- CONTROLLERS -->
+  <script src="controllers/specs.ctrl.js"></script>
+  <script src="controllers/login.ctrl.js"></script>
+
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div ng-include src="'views/header.html'"></div>
+
+  <!-- NAVIGATION -->
+  <div ng-include src="'views/navigation.html'"></div>
+
+  <!-- BODY -->  
+  <div ng-view></div>
+  
+  <!-- FOOTER -->
+  <div ng-include src="'views/footer.html'"></div>
+
+  <!-- FIREBASE -->
+  <script src="bower_components/angular/firebase.js"></script>
+  <script src="bower_components/angular/angularfire.min.js"></script>
+  
+</body>
+</html>
