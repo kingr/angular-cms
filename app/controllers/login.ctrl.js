@@ -4,25 +4,58 @@
 
 	var login = angular.module('login.ctrl', []);
 
-	login.controller('login.ctrl', ['$scope','$firebaseArray', '$firebaseAuth',
-    	function($scope, $firebaseArray, $firebaseAuth) {
+	login.controller('login.ctrl', ['$scope',
+    	function($scope) {
 
-      		var ref = new Firebase("https://evmotorcycle.firebaseio.com");
-  
-      		// create an instance of the authentication service
-      		var auth = $firebaseAuth(ref);
+    		var ref = new Firebase("https://evmotorcycle.firebaseio.com");
 
+  			//login 
       		$scope.login = function() {
-		      $scope.authData = null;
-		      $scope.error = null;
-
-		      auth.$authAnonymously().then(function(authData) {
-		        $scope.authData = authData;
-		      }).catch(function(error) {
-		        $scope.error = error;
-		      });
+		      ref.authWithOAuthPopup("facebook", function(error, authData) {
+			  		if (error) {
+			    		console.log("Login Failed!", error);
+			  		} else {
+			    		console.log("Authenticated successfully with payload:", authData);
+  					}
+				}, {
+					remember: "sessionOnly",
+					scope: "email"
+				});
     		};
   
+  			// logout
+  			$scope.logout = function(){
+  				ref.unauth();
+  			};
+
+  			// add data to db
+  			var isNewUser = true;
+	  		ref.onAuth(function(authData) {
+					 if (authData && isNewUser) {
+					    // save the user's profile into the database so we can list users,
+					    // use them in Security and Firebase Rules, and show profiles
+					    ref.child("users")
+					    	.child(authData.uid)
+					    	.set({
+					      		provider	: authData.provider,
+					      		name 		: getName(authData)
+					    	});
+	  				}
+			});
+
+	  		// find a suitable name based on the meta info given by each provider
+			function getName(authData) {
+			  switch(authData.provider) {
+			     case 'password':
+			       return authData.password.email.replace(/@.*/, '');
+			     case 'twitter':
+			       return authData.twitter.displayName;
+			     case 'facebook':
+			       return authData.facebook.displayName;
+			  }
+			};
+
+
   		}]
 	);
 	
