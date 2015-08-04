@@ -19,5 +19,10 @@ function config($routeProvider) {
         .when('/login', {
         	templateUrl: 'views/admin/login.html',
             controller: 'login.ctrl'
+        })
+
+        .when('/admin', {
+            templateUrl: 'views/admin/index.html',
+            controller: 'admin.ctrl'
         });
 }

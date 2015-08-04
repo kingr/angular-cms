@@ -4,8 +4,8 @@
 
 	var login = angular.module('login.ctrl', []);
 
-	login.controller('login.ctrl', ['$scope',
-    	function($scope) {
+	login.controller('login.ctrl', ['$scope', '$location',
+    	function($scope, $location) {
 
     		var ref = new Firebase("https://evmotorcycle.firebaseio.com");
 
@@ -15,6 +15,7 @@
 			  		if (error) {
 			    		console.log("Login Failed!", error);
 			  		} else {
+			  			$location.path('/admin');
 			    		console.log("Authenticated successfully with payload:", authData);
   					}
 				}, {

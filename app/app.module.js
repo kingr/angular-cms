@@ -14,7 +14,8 @@ angular
         /* ================================
             backend controllers 
         =================================== */
-        'login.ctrl'
+        'login.ctrl',
+        'admin.ctrl'
 
         
 ]);
