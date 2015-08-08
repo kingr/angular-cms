@@ -9,16 +9,7 @@
 
     		var ref = new Firebase("https://evmotorcycle.firebaseio.com");
 
-ref.authWithPassword({
-  email    : "kefarao@gmail.com",
-  password : "Clocks101"
-}, function(error, authData) {
-  if (error) {
-    console.log("Login Failed!", error);
-  } else {
-    console.log("Authenticated successfully with payload:", authData);
-  }
-});
+
 
   			//login 
   			/*
