@@ -12,33 +12,32 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="app.module.js"></script>
   <script src="app.config.js"></script>
-  <script src="js/animations.js"></script>
+  
+  <!-- FIREBASE -->
+  <script src="bower_components/angular/firebase.js"></script>
+  <script src="bower_components/angular/angularfire.min.js"></script>
 
-  <!-- CONTROLLERS -->
-  <script src="controllers/specs.ctrl.js"></script>
-  <script src="controllers/login.ctrl.js"></script>
-  <script src="controllers/admin.ctrl.js"></script>
+  <!-- FE CONTROLLERS -->
+  <script src="controllers/frontend/home.ctrl.js"></script>
+  <script src="controllers/frontend/specs.ctrl.js"></script>
 
-  <script src="js/filters.js"></script>
-  <script src="js/services.js"></script>
+  <!-- ADMIN CONTROLLERS -->
+  <script src="controllers/admin/home.admin.ctrl.js"></script>
+  <script src="controllers/admin/login.admin.ctrl.js"></script>
 </head>
 <body>
 
   <!-- HEADER -->
-  <div ng-include src="'views/header.html'"></div>
+  <div ng-include src="'views/templates/header.html'"></div>
 
   <!-- NAVIGATION -->
-  <div ng-include src="'views/navigation.html'"></div>
+  <div ng-include src="'views/templates/navigation.html'"></div>
 
   <!-- BODY -->  
   <div ng-view></div>
   
   <!-- FOOTER -->
-  <div ng-include src="'views/footer.html'"></div>
-
-  <!-- FIREBASE -->
-  <script src="bower_components/angular/firebase.js"></script>
-  <script src="bower_components/angular/angularfire.min.js"></script>
+  <div ng-include src="'views/templates/footer.html'"></div>
   
 </body>
 </html>

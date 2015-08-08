@@ -5,24 +5,29 @@ angular
 function config($routeProvider) {
     $routeProvider
     	/* ================================
-            frontend views 
+            frontend 
         =================================== */
+        .when('/', {
+            templateUrl: 'views/frontend/home.html',
+            controller: 'home.ctrl'
+        })
+
         .when('/specs', {
-            templateUrl: 'views/specs.html',
+            templateUrl: 'views/frontend/specs.html',
             controller: 'specs.ctrl'
         })
 
 
         /* ================================
-            backend views 
+            admin 
         =================================== */
         .when('/login', {
         	templateUrl: 'views/admin/login.html',
-            controller: 'login.ctrl'
+            controller: 'login.admin.ctrl'
         })
 
         .when('/admin', {
-            templateUrl: 'views/admin/index.html',
-            controller: 'admin.ctrl'
+            templateUrl: 'views/admin/home.html',
+            controller: 'index.admin.ctrl'
         });
 }

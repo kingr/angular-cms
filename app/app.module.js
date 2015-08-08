@@ -8,14 +8,15 @@ angular
         /* ================================
             frontend controllers 
         =================================== */
+        'home.ctrl',
         'specs.ctrl',
 
 
         /* ================================
-            backend controllers 
+            admin controllers 
         =================================== */
-        'login.ctrl',
-        'admin.ctrl'
-
+        'home.admin.ctrl',
+        'login.admin.ctrl'
+        
         
 ]);
