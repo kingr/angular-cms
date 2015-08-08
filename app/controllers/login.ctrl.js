@@ -9,7 +9,19 @@
 
     		var ref = new Firebase("https://evmotorcycle.firebaseio.com");
 
+ref.authWithPassword({
+  email    : "kefarao@gmail.com",
+  password : "Clocks101"
+}, function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+});
+
   			//login 
+  			/*
       		$scope.login = function() {
 		      ref.authWithOAuthPopup("facebook", function(error, authData) {
 			  		if (error) {
@@ -23,18 +35,14 @@
 					scope: "email"
 				});
     		};
-  
+  */
   			// logout
-  			$scope.logout = function(){
+  	/*		$scope.logout = function(){
   				ref.unauth();
   			};
-
-  			var authData = ref.getAuth();
-			if (!authData){
-				console.log("Auth failed");
-  				//console.log("Authenticated user with uid:", authData.uid);
-			}
-
+*/
+  			// broadcast login status
+  			//$scope.user = ref.getAuth();
   		}]
 	);
 	
