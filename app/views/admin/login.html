@@ -1,8 +1,9 @@
-<div ng-controller="login.ctrl">
+<div ng-controller="login.admin.ctrl as login">
   <form>
 
-  	<input type="text" placeholder="Email" />
-  	<input type="text" placeholder="Password" />
-  	<input type="submit" />
+  	<input type="text" ng-model="email" placeholder="Email" />
+  	<input type="text" ng-model="password" placeholder="Password" />
+  	<input type="submit" ng-click="login()" />
+
   </form>
 </div>

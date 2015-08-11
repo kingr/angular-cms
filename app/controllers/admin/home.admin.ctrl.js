@@ -4,18 +4,22 @@
 
 	var home = angular.module('home.admin.ctrl', []);
 
-	home.controller('home.admin.ctrl', ['$scope', '$location',
-    	function($scope, $location) {
+	home.controller('home.admin.ctrl', ['$scope', '$location', 'firebaseInit',
+    	function($scope, $location, firebaseInit) {
 
-    		var ref = new Firebase("https://evmotorcycle.firebaseio.com");
-
-    		// check if user has admin rights
-  			var authData = ref.getAuth();
+    		// check if user is logged in
+  			var authData = firebaseInit.getAuth();
 			if (!authData){
 				$location.path('/login');
 			} else {
 				$scope.access = "Granted";
 			}
+
+			// logout
+  			$scope.logout = function(){
+  				firebaseInit.unauth();
+  				$location.path('/login');
+  			};
 
   		}]
 	);

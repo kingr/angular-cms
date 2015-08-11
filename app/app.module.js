@@ -4,6 +4,7 @@ angular
     .module('app', [
         'ngRoute',
         'firebase',
+        'firebaseInit',
 
         /* ================================
             frontend controllers 
@@ -19,4 +20,4 @@ angular
         'login.admin.ctrl'
         
         
-]);
+    ]);

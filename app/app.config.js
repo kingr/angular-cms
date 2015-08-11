@@ -28,6 +28,6 @@ function config($routeProvider) {
 
         .when('/admin', {
             templateUrl: 'views/admin/home.html',
-            controller: 'index.admin.ctrl'
+            controller: 'home.admin.ctrl'
         });
 }
