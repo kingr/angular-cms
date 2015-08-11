@@ -5,7 +5,8 @@ angular
         'ngRoute',
         'firebase',
         'firebaseInit',
-
+        'ui.router',
+        
         /* ================================
             frontend controllers 
         =================================== */

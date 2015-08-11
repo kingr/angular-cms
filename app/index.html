@@ -10,6 +10,7 @@
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="/app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="app.module.js"></script>
   <script src="app.config.js"></script>
   
@@ -31,16 +32,16 @@
 <body>
 
   <!-- HEADER -->
-  <div ng-include src="'views/templates/header.html'"></div>
+  <div ui-view="header"></div>
 
   <!-- NAVIGATION -->
-  <div ng-include src="'views/templates/navigation.html'"></div>
+  <div ui-view="navigation"></div>
 
   <!-- BODY -->  
-  <div ng-view></div>
+  <div ui-view="body"></div>
   
   <!-- FOOTER -->
-  <div ng-include src="'views/templates/footer.html'"></div>
+  <div ui-view="footer"></div>
   
 </body>
 </html>

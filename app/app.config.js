@@ -2,32 +2,60 @@ angular
     .module('app')
     .config(config);
 
-function config($routeProvider) {
-    $routeProvider
-    	/* ================================
+function config($stateProvider, $urlRouterProvider) {
+
+     $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+        /* ================================
             frontend 
         =================================== */
-        .when('/', {
-            templateUrl: 'views/frontend/home.html',
+        .state('app', {
+            url:'/',
+            views: {
+                'header': {
+                    templateUrl: 'views/templates/header.html'
+                },
+                'navigation': {
+                    templateUrl: 'views/templates/navigation.html'
+                }
+            },
+            //templateUrl: 'views/frontend/home.html',
             controller: 'home.ctrl'
         })
-
-        .when('/specs', {
-            templateUrl: 'views/frontend/specs.html',
-            controller: 'specs.ctrl'
+        .state('app.specs', {
+            url:'specs',
+            views:{
+                'body@': {
+                    templateUrl: 'views/frontend/specs.html',
+                    controller: 'specs.ctrl'
+                }
+            }
+            
         })
 
 
         /* ================================
             admin 
         =================================== */
-        .when('/login', {
-        	templateUrl: 'views/admin/login.html',
-            controller: 'login.admin.ctrl'
+        .state('login', {
+            url:'/login',
+            views: {
+                'body':{
+                    templateUrl: 'views/admin/login.html',
+                    controller: 'login.admin.ctrl'
+                }
+            }
+        	
         })
 
-        .when('/admin', {
-            templateUrl: 'views/admin/home.html',
+        .state('admin', {
+            url:'/admin',
+            views: {
+                'body':{
+                    templateUrl: 'views/admin/home.html',
+                }
+            },
             controller: 'home.admin.ctrl'
         });
 }
