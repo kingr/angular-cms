@@ -1,6 +1,7 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
-var path = require('path');
+var gulp 				= require('gulp');
+var less 				= require('gulp-less');
+var path 				= require('path');
+var livereload 			= require('gulp-livereload');
 
 // call watch function
 gulp.task('default', ['watch']);
