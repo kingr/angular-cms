@@ -1,17 +1,92 @@
 /* ================================
 		RESET 
 =================================== */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 /* ================================
 		COLORS 
 =================================== */
 /* ================================
 		BASE 
 =================================== */
-body {
-  font-size: 20px;
-  animation: fadein 2s;
-}
-@keyframes fadein {
+/* ================================
+		ANIMATIONS 
+=================================== */
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -20,13 +95,81 @@ body {
   }
 }
 /* ================================
+		ELEMENTS 
+=================================== */
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 2s;
+}
+h2 {
+  font-size: 30px;
+  text-align: center;
+  line-height: 27px;
+  text-transform: uppercase;
+}
+/* ================================
+		NAV 
+=================================== */
+nav {
+  background-color: #000000;
+  text-transform: uppercase;
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+nav ul {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  position: relative;
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+nav ul li {
+  margin: 0px;
+  background-color: #000000;
+  display: table-cell;
+  width: 25%;
+  padding: 0.65em 0.125em;
+  white-space: nowrap;
+}
+nav a {
+  display: block;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color: #000000;
+}
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+}
+nav ul li:hover > ul {
+  display: inherit;
+}
+nav ul ul li {
+  min-width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+/* ================================
 		ADMIN 
 =================================== */
 /* ================================
 		HEADER 
 =================================== */
 header {
-  background-color: #fff;
+  font-family: 'Teko', sans-serif;
+  margin: 15px 0;
 }
 /* ================================
 		CONTENT 
