@@ -18,9 +18,11 @@ function config($stateProvider, $urlRouterProvider) {
                 },
                 'navigation': {
                     templateUrl: 'views/templates/navigation.html'
+                },
+                'body': {
+                    templateUrl: 'views/frontend/home.html'
                 }
             },
-            //templateUrl: 'views/frontend/home.html',
             controller: 'home.ctrl'
         })
         .state('app.specs', {

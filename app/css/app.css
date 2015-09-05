@@ -107,6 +107,52 @@ h2 {
   text-align: center;
   line-height: 27px;
   text-transform: uppercase;
+  font-weight: normal;
+}
+p {
+  font-size: 13px;
+}
+/* ================================
+		SECTIONS 
+=================================== */
+.intro {
+  padding: 20px 15px;
+}
+/* ================================
+		SLIDER 
+=================================== */
+.sliderWrapper {
+  width: 320px;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+.slider div {
+  position: relative;
+}
+.button {
+  position: absolute;
+  bottom: 45%;
+  z-index: 200;
+  cursor: pointer;
+  color: #1c5785;
+  font-size: 3em;
+}
+.sliderNext {
+  right: 5%;
+}
+.sliderPrev {
+  left: 5%;
+}
+/* ================================
+		ADMIN 
+=================================== */
+/* ================================
+		HEADER 
+=================================== */
+header {
+  font-family: 'Teko', sans-serif;
+  margin: 15px 0;
 }
 /* ================================
 		NAV 
@@ -160,16 +206,6 @@ nav ul ul li {
   float: none;
   display: list-item;
   position: relative;
-}
-/* ================================
-		ADMIN 
-=================================== */
-/* ================================
-		HEADER 
-=================================== */
-header {
-  font-family: 'Teko', sans-serif;
-  margin: 15px 0;
 }
 /* ================================
 		CONTENT 

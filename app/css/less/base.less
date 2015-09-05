@@ -25,7 +25,7 @@ h2 {
     text-align 						: center;
     line-height						: 27px;
     text-transform 					: uppercase; 
-
+    font-weight 					: normal; 
 }
 
 h3 {
@@ -34,7 +34,7 @@ h3 {
 
 
 p {
-	
+	font-size 						: 13px;
 }
 
 a {
@@ -50,67 +50,42 @@ li {
 }
 
 /* ================================
-		NAV 
+		SECTIONS 
 =================================== */
-nav {
-    background-color				: @black;
-    text-transform 					: uppercase;
-    font-family 					: 'Ubuntu Condensed', sans-serif;
-}
- 
-nav:after {
-    content							: "";
-    display 						: table;
-    clear 							: both;
-}
- 
-nav ul {
-    padding 						: 0;
-    margin 							: 0 auto;
-    list-style 						: none;
-    position 						: relative;
-    display 						: table;
-    width 							: 100%;
-    text-align 						: center;
-}
- 
-nav ul li {
-    margin 							: 0px;
-    background-color 				: @black;
-    display 						: table-cell;
-    width 							: 25%;
-    padding 						: 0.65em 0.125em;
-    white-space 					: nowrap;
-}
- 
-nav a {
-    display 						: block;
-    color 							: @white;
-    font-size 						: 16px;
-    text-decoration 				: none;
-}
- 
-nav a:hover {
-    background-color 				: #000000;
+.intro {
+	padding 						: 20px 15px;
 }
 
-nav ul ul {
-    display 						: none;
-    position 						: absolute;
-    top 							: 60px;
-}
- 
-nav ul li:hover > ul {
-    display 						: inherit;
-}
- 
-nav ul ul li {
-    min-width						: 170px;
-    float							: none;
-    display							: list-item;
-    position 						: relative;
+/* ================================
+		SLIDER 
+=================================== */
+.sliderWrapper {
+	width 						: 320px;
+	height 					    : 280px;
+	position 					: relative;
+	overflow          : hidden;
 }
 
+.slider div {
+	position   				: relative;	
+}
+
+.button {
+	position 					: absolute;
+	bottom 						: 45%;
+	z-index 					: 200;
+	cursor 						: pointer;
+	color 					  : #1c5785;
+	font-size 				: 3em;
+}
+
+.sliderNext {
+	right 						: 5%;
+}
+
+.sliderPrev {
+	left 						  : 5%;
+}
 
 
 

@@ -2,7 +2,6 @@
 
 angular
     .module('app', [
-        'ngRoute',
         'firebase',
         'firebaseInit',
         'ui.router',
