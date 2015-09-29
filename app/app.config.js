@@ -14,13 +14,13 @@ function config($stateProvider, $urlRouterProvider) {
             url:'/',
             views: {
                 'header': {
-                    templateUrl: 'views/templates/header.html'
+                    templateUrl: '/app/views/templates/header.html'
                 },
                 'navigation': {
-                    templateUrl: 'views/templates/navigation.html'
+                    templateUrl: '/app/views/templates/navigation.html'
                 },
                 'body': {
-                    templateUrl: 'views/frontend/home.html'
+                    templateUrl: '/app/views/frontend/home.html'
                 }
             },
             controller: 'home.ctrl'
@@ -29,7 +29,7 @@ function config($stateProvider, $urlRouterProvider) {
             url:'specs',
             views:{
                 'body@': {
-                    templateUrl: 'views/frontend/specs.html',
+                    templateUrl: '/app/views/frontend/specs.html',
                     controller: 'specs.ctrl'
                 }
             }
@@ -44,7 +44,7 @@ function config($stateProvider, $urlRouterProvider) {
             url:'/login',
             views: {
                 'body':{
-                    templateUrl: 'views/admin/login.html',
+                    templateUrl: '/app/views/admin/login.html',
                     controller: 'login.admin.ctrl'
                 }
             }
@@ -55,7 +55,7 @@ function config($stateProvider, $urlRouterProvider) {
             url:'/admin',
             views: {
                 'body':{
-                    templateUrl: 'views/admin/home.html',
+                    templateUrl: '/app/views/admin/home.html',
                 }
             },
             controller: 'home.admin.ctrl'
