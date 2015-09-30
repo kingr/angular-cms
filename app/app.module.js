@@ -4,7 +4,6 @@ angular
     .module('app', [
         'firebase',
         'firebaseInit',
-        'slickslider',
         'ui.router',
         
         /* ================================

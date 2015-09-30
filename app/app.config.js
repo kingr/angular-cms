@@ -4,7 +4,7 @@ angular
 
 function config($stateProvider, $urlRouterProvider) {
 
-     $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
         /* ================================
@@ -22,8 +22,7 @@ function config($stateProvider, $urlRouterProvider) {
                 'body': {
                     templateUrl: '/app/views/frontend/home.html'
                 }
-            },
-            controller: 'home.ctrl'
+            }
         })
         .state('app.specs', {
             url:'specs',
