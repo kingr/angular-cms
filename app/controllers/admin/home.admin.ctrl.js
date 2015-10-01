@@ -4,22 +4,39 @@
 
 	var home = angular.module('home.admin.ctrl', []);
 
-	home.controller('home.admin.ctrl', ['$scope', '$location', 'firebaseInit',
-    	function($scope, $location, firebaseInit) {
+	home.controller('home.admin.ctrl', ['$scope', '$location', '$firebaseArray', '$firebaseAuth',
+    	function($scope, $location, $firebaseArray, $firebaseAuth) {
 
-    		// check if user is logged in
-  			var authData = firebaseInit.getAuth();
+			var ref = new Firebase("https://evmotorcycle.firebaseio.com");
+			ref = ref.child("nav"); 
+			
+
+			// check if user is logged in
+  			var authData = $firebaseAuth(ref);
+  			console.log("authData: " + authData);
 			if (!authData){
 				$location.path('/login');
 			} else {
 				$scope.access = "Granted";
 			}
 
+			$scope.nav = $firebaseArray(ref);
+
 			// logout
   			$scope.logout = function(){
-  				firebaseInit.unauth();
+  				ref.unauth();
   				$location.path('/login');
   			};
+
+
+
+  			// add stuff
+  			$scope.addMessages = function(){
+  				$scope.messages.$add({
+  					text: $scope.newMessageText
+  				})
+  			}
+
 
   		}]
 	);

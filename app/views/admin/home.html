@@ -1,3 +1,23 @@
-<div ng-controller="home.admin.ctrl as admin">
-  <a ng-click="logout()">logout</a>
-</div>
+<section class="adminWrapper" ng-controller="home.admin.ctrl as admin">
+
+
+	<ul>
+		<li ng-repeat="navItem in nav">
+			<p>{{ navItem.title }}</p>
+			<input ng-model="navItem.url" ng-change="messages.$save(message)" />
+			<button ng-click="messages.$remove(message)">delete</button>
+		</li>
+	</ul>
+
+	<br>
+
+	<form ng-submit="addMessages()">
+		<input ng-model="newMessageText">
+		<button type="submit">add message</button>
+	</form>
+
+	<br><br>
+  	<a ng-click="logout()">logout</a>
+
+  
+</section>

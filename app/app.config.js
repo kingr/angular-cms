@@ -17,10 +17,12 @@ function config($stateProvider, $urlRouterProvider) {
                     templateUrl: '/app/views/templates/header.html'
                 },
                 'navigation': {
-                    templateUrl: '/app/views/templates/navigation.html'
+                    templateUrl: '/app/views/templates/navigation.html',
+                    controller: 'navigation.ctrl'
                 },
                 'body': {
-                    templateUrl: '/app/views/frontend/home.html'
+                    templateUrl: '/app/views/frontend/home.html',
+                    controller: 'home.ctrl'
                 }
             }
         })

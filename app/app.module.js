@@ -10,6 +10,7 @@ angular
             frontend controllers 
         =================================== */
         'home.ctrl',
+        'navigation.ctrl',
         'specs.ctrl',
 
 
