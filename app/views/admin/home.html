@@ -5,14 +5,30 @@
 		<li ng-repeat="navItem in nav">
 			<p>{{ navItem.title }}</p>
 			<input ng-model="navItem.url" ng-change="messages.$save(message)" />
-			<button ng-click="messages.$remove(message)">delete</button>
+			<button ng-click="nav.$remove(navItem)">delete</button>
+			<button ng-click="nav.$save(navItem)">update</button>
 		</li>
 	</ul>
 
 	<br>
-
-	<form ng-submit="addMessages()">
-		<input ng-model="newMessageText">
+	<h2>my list</h2>
+	<ul>
+		<li ng-repeat="navItem in nav">
+			<p>title: {{ navItem.title }}</p>
+			<p ng-if="navItem.url !== string">url: {{ navItem.url }}</p>
+			<ul ng-if="navItem.url == string">
+				<li ng-repeat="nestedItem in navItem">
+					{{nestedItem}}
+					<p ng-if="nestedItem.title !== object">title: {{ nestedItem.title }}</p>
+					<p ng-if="nestedItem.url !== object">url: {{ nestedItem.url }}</p>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<br><br>
+	<form ng-submit="addMenuItem()">
+		<input ng-model="newNavTitle">
+		<input ng-model="newNavUrl">
 		<button type="submit">add message</button>
 	</form>
 

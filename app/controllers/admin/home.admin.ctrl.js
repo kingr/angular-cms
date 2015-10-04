@@ -7,9 +7,14 @@
 	home.controller('home.admin.ctrl', ['$scope', '$location', '$firebaseArray', '$firebaseAuth',
     	function($scope, $location, $firebaseArray, $firebaseAuth) {
 
+    		// open conn
 			var ref = new Firebase("https://evmotorcycle.firebaseio.com");
+
+			// specify dataset
 			ref = ref.child("nav"); 
-			
+
+			// bind data to scope
+			$scope.nav = $firebaseArray(ref);
 
 			// check if user is logged in
   			var authData = $firebaseAuth(ref);
@@ -20,7 +25,7 @@
 				$scope.access = "Granted";
 			}
 
-			$scope.nav = $firebaseArray(ref);
+			
 
 			// logout
   			$scope.logout = function(){
@@ -30,10 +35,11 @@
 
 
 
-  			// add stuff
-  			$scope.addMessages = function(){
-  				$scope.messages.$add({
-  					text: $scope.newMessageText
+  			// add menu item
+  			$scope.addMenuItem = function(){
+  				$scope.nav.$add({
+  					title: $scope.newNavTitle,
+  					url: $scope.newNavUrl
   				})
   			}
 
