@@ -11,16 +11,14 @@
 	</ul>
 
 	<br>
-	<h2>my list</h2>
+	<h2>menu</h2>
 	<ul>
 		<li ng-repeat="navItem in nav">
-			<p>title: {{ navItem.title }}</p>
-			<p ng-if="navItem.url !== string">url: {{ navItem.url }}</p>
+			<a ng-if="navItem.url !== string" href="{{ navItem.url }}">{{ navItem.title }}</a>
+			<a href="#" ng-if="navItem.url == string">{{ navItem.title }}</a>
 			<ul ng-if="navItem.url == string">
-				<li ng-repeat="nestedItem in navItem">
-					{{nestedItem}}
-					<p ng-if="nestedItem.title !== object">title: {{ nestedItem.title }}</p>
-					<p ng-if="nestedItem.url !== object">url: {{ nestedItem.url }}</p>
+				<li ng-repeat="(key, value) in navItem" ng-if="key !== 'title'">
+					<a href="{{ value.url }}">{{ value.title }}</a>
 				</li>
 			</ul>
 		</li>
