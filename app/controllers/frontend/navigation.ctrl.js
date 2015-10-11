@@ -4,10 +4,17 @@
 
 	var navigation = angular.module('navigation.ctrl', []);
 
-	navigation.controller('navigation.ctrl', ['$scope', 
-    	function($scope) {
+	navigation.controller('navigation.ctrl', ['$scope','$firebaseArray', '$state' ,'firebaseInit', 
+    	function($scope, $firebaseArray, $state, firebaseInit) {
 
-    		this.name = "kurt";
+    		// open conn
+    		var ref = firebaseInit;
+
+			// nav dataset
+			var refNav = ref.child("nav"); 
+
+			// bind data to scope
+			$scope.nav = $firebaseArray(refNav);
 
   		}]
 	);

@@ -1,16 +1,13 @@
 <nav ng-controller="navigation.ctrl as navigation">
 	<ul>
-		<li><a href="#">{{navigation.name}}</a></li>
-		<li><a href="#">categories</a>
-			<ul>
-				<li><a href="#">code</a></li>
-				<li><a href="#">research</a></li>
-				<li><a href="#">manufacturing</a></li>
-				<li><a href="#">videos</a></li>
-				<li><a href="#">archives</a></li>
+		<li ng-repeat="navItem in nav">
+			<a ng-if="navItem.url !== string" href="{{ navItem.url }}">{{ navItem.title }}</a>
+			<a href="#" ng-if="navItem.url == string">{{ navItem.title }}</a>
+			<ul ng-if="navItem.url == string">
+				<li ng-repeat="(key, value) in navItem" ng-if="key !== 'title'">
+					<a href="{{ value.url }}">{{ value.title }}</a>
+				</li>
 			</ul>
 		</li>
-		<li><a href="#">specs</a></li>
-		<li><a href="#">sponsors</a></li>
 	</ul>
 </nav>
