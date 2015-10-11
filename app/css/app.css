@@ -125,8 +125,11 @@ p {
 		LOGIN 
 =================================== */
 /* ================================
-		ADMIN 
+		NAVIGATION 
 =================================== */
+.feNavTbl table {
+  margin-bottom: 10px;
+}
 /* ================================
 		HEADER 
 =================================== */
@@ -160,7 +163,7 @@ nav ul li {
   margin: 0px;
   background-color: #000000;
   display: table-cell;
-  width: 25%;
+  width: 15%;
   padding: 0.65em 0.125em;
   white-space: nowrap;
 }

@@ -11,7 +11,7 @@
     		var ref = firebaseInit;
 
 			// nav dataset
-			var refNav = ref.child("nav"); 
+			var refNav = ref.child("nav").orderByChild("title"); 
 
 			// bind data to scope
 			$scope.nav = $firebaseArray(refNav);
