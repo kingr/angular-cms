@@ -2,9 +2,9 @@
 	
 	'use strict';
 
-	var home = angular.module('home.admin.ctrl', []);
+	var nav = angular.module('nav.admin.ctrl', []);
 
-	home.controller('home.admin.ctrl', ['$scope','$firebaseArray', '$state' ,'firebaseInit',
+	nav.controller('nav.admin.ctrl', ['$scope','$firebaseArray', '$state' ,'firebaseInit',
     	function($scope, $firebaseArray, $state, firebaseInit) {
     		// open conn
     		var ref = firebaseInit;
@@ -17,7 +17,6 @@
 
 			// check if user is logged in
   			var authData = ref.getAuth();
-  			console.log("authData: " + JSON.stringify(authData));
 			// if (!authData){
 			// 	$state.go('login');
 			// } else {

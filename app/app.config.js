@@ -55,10 +55,26 @@ function config($stateProvider, $urlRouterProvider) {
         .state('admin', {
             url:'/admin',
             views: {
+                'navigation': {
+                    templateUrl: '/app/views/templates/navigationAdmin.html',
+                },
                 'body':{
                     templateUrl: '/app/views/admin/home.html',
                 }
             },
             controller: 'home.admin.ctrl'
+        })
+
+        .state('nav', {
+            url:'/nav',
+            views: {
+                'navigation': {
+                    templateUrl: '/app/views/templates/navigationAdmin.html',
+                },
+                'body':{
+                    templateUrl: '/app/views/admin/nav.html',
+                }
+            },
+            controller: 'home.nav.ctrl'
         });
 }

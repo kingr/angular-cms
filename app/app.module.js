@@ -18,7 +18,8 @@ angular
             admin controllers 
         =================================== */
         'home.admin.ctrl',
-        'login.admin.ctrl'
+        'login.admin.ctrl',
+        'nav.admin.ctrl'
         
         
     ]);
