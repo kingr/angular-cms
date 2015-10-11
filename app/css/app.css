@@ -95,7 +95,7 @@ video {
   }
 }
 /* ================================
-		ELEMENTS 
+		BASE ELEMENTS 
 =================================== */
 body {
   font-size: 16px;
@@ -115,6 +115,10 @@ p {
 /* ================================
 		SECTIONS 
 =================================== */
+header {
+  font-family: 'Teko', sans-serif;
+  margin: 15px 0;
+}
 [gutterContent] {
   padding: 20px 15px;
 }
@@ -131,12 +135,8 @@ p {
   margin-bottom: 10px;
 }
 /* ================================
-		HEADER 
+		NAVIGATION 
 =================================== */
-header {
-  font-family: 'Teko', sans-serif;
-  margin: 15px 0;
-}
 /* ================================
 		NAV 
 =================================== */
@@ -144,28 +144,6 @@ nav {
   background-color: #000000;
   text-transform: uppercase;
   font-family: 'Ubuntu Condensed', sans-serif;
-}
-nav:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-nav ul {
-  padding: 0;
-  margin: 0 auto;
-  list-style: none;
-  position: relative;
-  display: table;
-  width: 100%;
-  text-align: center;
-}
-nav ul li {
-  margin: 0px;
-  background-color: #000000;
-  display: table-cell;
-  width: 15%;
-  padding: 0.65em 0.125em;
-  white-space: nowrap;
 }
 nav a {
   display: block;
@@ -176,19 +154,51 @@ nav a {
 nav a:hover {
   background-color: #000000;
 }
-nav ul ul {
-  display: none;
-  position: absolute;
-  top: 60px;
+nav :after {
+  content: "";
+  display: table;
+  clear: both;
+}
+nav ul:first-child {
+  width: 100%;
+}
+nav ul {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  position: relative;
+  display: table;
+  text-align: center;
+  width: auto;
+}
+nav ul li {
+  margin: 0px;
+  background-color: #000000;
+  display: table-cell;
+  width: 24%;
+  padding: 0.65em 0.125em;
+  white-space: nowrap;
+  position: relative;
 }
 nav ul li:hover > ul {
   display: inherit;
 }
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: -10px;
+}
 nav ul ul li {
-  min-width: 170px;
+  min-width: 140px;
+  padding: 9px 12px;
+  text-align: left;
   float: none;
   display: list-item;
   position: relative;
+}
+nav ul ul li:last-child {
+  padding-bottom: 12px;
 }
 /* ================================
 		CONTENT 

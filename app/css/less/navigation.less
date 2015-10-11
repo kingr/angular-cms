@@ -2,60 +2,79 @@
 		NAV 
 =================================== */
 nav {
+
     background-color				: @black;
     text-transform 					: uppercase;
     font-family 					: 'Ubuntu Condensed', sans-serif;
-}
- 
-nav:after {
-    content							: "";
-    display 						: table;
-    clear 							: both;
-}
- 
-nav ul {
-    padding 						: 0;
-    margin 							: 0 auto;
-    list-style 						: none;
-    position 						: relative;
-    display 						: table;
-    width 							: 100%;
-    text-align 						: center;
-}
- 
-nav ul li {
-    margin 							: 0px;
-    background-color 				: @black;
-    display 						: table-cell;
-    width 							: 15%;
-    padding 						: 0.65em 0.125em;
-    white-space 					: nowrap;
-}
- 
-nav a {
-    display 						: block;
-    color 							: @white;
-    font-size 						: 16px;
-    text-decoration 				: none;
-}
- 
-nav a:hover {
-    background-color 				: #000000;
+
+    a {
+        display                         : block;
+        color                           : @white;
+        font-size                       : 16px;
+        text-decoration                 : none;
+    }
+
+    a:hover {
+        background-color            : #000000;
+    }
+
+    :after {
+        content                     : "";
+        display                     : table;
+        clear                       : both;
+    }
+
+    
+
+    ul:first-child {
+        width                       : 100%;
+
+    }
+
+    ul {
+        padding                     : 0;
+        margin                      : 0 auto;
+        list-style                  : none;
+        position                    : relative;
+        display                     : table;
+        text-align                  : center;
+        width                       : auto; 
+
+        li {
+            margin                  : 0px;
+            background-color        : @black;
+            display                 : table-cell;
+            width                   : 24%;
+            padding                 : 0.65em 0.125em;
+            white-space             : nowrap;
+            position                : relative; 
+        }
+
+        li:hover > ul {
+            display                         : inherit;
+        }
+
+        ul {
+            display                 : none;
+            position                : absolute;
+            top                     : 38px;
+            left                    : -10px;
+
+            li {
+                min-width           : 140px;
+                padding             : 9px 12px;
+                text-align          : left;
+                float               : none;
+                display             : list-item;
+                position            : relative;
+            }
+
+            li:last-child {
+                padding-bottom      : 12px;
+            }
+        }
+    }
+
 }
 
-nav ul ul {
-    display 						: none;
-    position 						: absolute;
-    top 							: 60px;
-}
  
-nav ul li:hover > ul {
-    display 						: inherit;
-}
- 
-nav ul ul li {
-    min-width						: 170px;
-    float							: none;
-    display							: list-item;
-    position 						: relative;
-}

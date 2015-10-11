@@ -18,11 +18,11 @@
 			// check if user is logged in
   			var authData = ref.getAuth();
   			console.log("authData: " + JSON.stringify(authData));
-			// if (!authData){
-			// 	$state.go('login');
-			// } else {
-			// 	$scope.access = "Granted";
-			// }
+			if (!authData){
+				$state.go('login');
+			} else {
+				$scope.access = "Granted";
+			}
 
 			// logout
   			$scope.logout = function(){
