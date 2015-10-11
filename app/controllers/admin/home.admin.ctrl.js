@@ -11,13 +11,13 @@
 			var ref = new Firebase("https://evmotorcycle.firebaseio.com");
 
 			// specify dataset
-			ref = ref.child("nav"); 
+			var refNav = ref.child("nav"); 
 
 			// bind data to scope
-			$scope.nav = $firebaseArray(ref);
+			$scope.nav = $firebaseArray(refNav);
 
 			// check if user is logged in
-  			var authData = $firebaseAuth(ref);
+  			var authData = ref.getAuth();
   			console.log("authData: " + authData);
 			if (!authData){
 				$location.path('/login');

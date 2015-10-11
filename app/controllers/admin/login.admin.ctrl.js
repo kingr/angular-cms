@@ -4,8 +4,8 @@
 
 	var login = angular.module('login.admin.ctrl', []);
 
-	login.controller('login.admin.ctrl', ['$scope', '$location', 'firebaseInit',
-    	function($scope, $location, firebaseInit) {
+	login.controller('login.admin.ctrl', ['$scope', '$state', 'firebaseInit',
+    	function($scope, $state, firebaseInit) {
 
     		
     		console.log(firebaseInit);
@@ -24,7 +24,7 @@
 				    console.log("Login Failed!", error);
 				    alert('Login Failed');
 				  } else {
-				    $location.path('/admin');
+				    $state.go('admin');
 				  }
 				});
     		}
@@ -33,7 +33,7 @@
   			var authData = firebaseInit.getAuth();
   			console.log(authData);
 			if (authData){
-				$location.path('/admin');
+				$state.go('admin');
 			} 
     		
 
