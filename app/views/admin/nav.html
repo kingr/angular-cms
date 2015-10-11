@@ -1,32 +1,43 @@
 <section class="adminWrapper" ng-controller="home.admin.ctrl as admin" gutterContent>
-
-	<ul>
-		<li ng-repeat="navItem in nav">
-			<p>{{ navItem.title }}</p>
-			<input ng-model="navItem.url" ng-change="messages.$save(message)" />
-			<button ng-click="nav.$remove(navItem)">delete</button>
-			<button ng-click="nav.$save(navItem)">update</button>
-		</li>
-	</ul>
-
+	<h3>Navigation</h3>
 	<br>
-	<h2>menu</h2>
-	<ul>
-		<li ng-repeat="navItem in nav">
-			<a ng-if="navItem.url !== string" href="{{ navItem.url }}">{{ navItem.title }}</a>
-			<a href="#" ng-if="navItem.url == string">{{ navItem.title }}</a>
-			<ul ng-if="navItem.url == string">
-				<li ng-repeat="(key, value) in navItem" ng-if="key !== 'title'">
-					<a href="{{ value.url }}">{{ value.title }}</a>
-				</li>
-			</ul>
-		</li>
-	</ul>
+	<table>
+		<tr ng-repeat="navItem in nav">
+			<td>
+				<table>
+					<tr>
+						<td>Title:</td>
+						<td><input ng-model="navItem.title" ng-change="messages.$save(message)" /></td>
+					</tr>
+					<tr>
+						<td>Route:</td>
+						<td><input ng-model="navItem.url" ng-change="messages.$save(message)" /></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><button ng-click="nav.$remove(navItem)">delete</button><button ng-click="nav.$save(navItem)">update</button></td>
+					</tr>
+				</table>	
+			</td>
+		</tr>
+	</table>
+
 	<br><br>
+	<h4>Add Navigation item</h4>
 	<form ng-submit="addMenuItem()">
-		<input ng-model="newNavTitle">
-		<input ng-model="newNavUrl">
-		<button type="submit">add message</button>
+		<table>
+			<tr>
+				<td>Title:</td>
+				<td><input ng-model="newNavTitle"></td>
+			</tr>
+				<td>Route:</td>
+				<td><input ng-model="newNavUrl"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button type="submit">add</button></td>
+			</tr>
+		</table>
 	</form>
 
 	<br><br>

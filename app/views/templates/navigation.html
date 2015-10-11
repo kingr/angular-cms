@@ -1,11 +1,11 @@
 <nav ng-controller="navigation.ctrl as navigation">
 	<ul>
 		<li ng-repeat="navItem in nav">
-			<a ng-if="navItem.url !== string" href="{{ navItem.url }}">{{ navItem.title }}</a>
-			<a href="#" ng-if="navItem.url == string">{{ navItem.title }}</a>
+			<a ng-if="navItem.url !== string" ui-sref="{{ navItem.url }}">{{ navItem.title }}</a>
+			<a ui-sref="#" ng-if="navItem.url == string">{{ navItem.title }}</a>
 			<ul ng-if="navItem.url == string">
 				<li ng-repeat="(key, value) in navItem" ng-if="key !== 'title'">
-					<a href="{{ value.url }}">{{ value.title }}</a>
+					<a ui-sref="{{ value.url }}">{{ value.title }}</a>
 				</li>
 			</ul>
 		</li>
