@@ -1,5 +1,6 @@
 <nav ng-controller="navigation.ctrl as navigation">
 	<ul>
+		<li><a ui-sref="app">Home</a></li>
 		<li ng-repeat="navItem in nav">
 			<a ng-if="navItem.url !== string" ui-sref="{{ navItem.url }}">{{ navItem.title }}</a>
 			<a ui-sref="#" ng-if="navItem.url == string">{{ navItem.title }}</a>
