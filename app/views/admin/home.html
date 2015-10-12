@@ -1,11 +1,13 @@
-<section class="adminWrapper" ng-controller="home.admin.ctrl as admin" gutterContent>
+<section ng-controller="home.admin.ctrl as admin" gutterContent>
 
 	
-	<h3>amazing blog</h3>
+	<h3>Intro</h3>
 	
-	<textarea rows="4" cols="50">
-At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
-	</textarea>
+	<form ng-submit="saveData()">
+
+		<textarea rows="15" ng-model="data.$value"></textarea>
+
+	</form>
 
 	<br><br>
 

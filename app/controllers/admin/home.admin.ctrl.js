@@ -4,20 +4,20 @@
 
 	var home = angular.module('home.admin.ctrl', []);
 
-	home.controller('home.admin.ctrl', ['$scope','$firebaseArray', '$state' ,'firebaseInit',
-    	function($scope, $firebaseArray, $state, firebaseInit) {
+	home.controller('home.admin.ctrl', ['$scope','$firebaseObject', '$state' ,'firebaseInit',
+    	function($scope, $firebaseObject, $state, firebaseInit) {
     		// open conn
     		var ref = firebaseInit;
 
 			// nav dataset
-			var refNav = ref.child("nav"); 
+			// var refIntro = ; 
 
-			// bind data to scope
-			$scope.nav = $firebaseArray(refNav);
+			var obj = $firebaseObject(ref.child("home").child('intro'));
+
+			obj.$bindTo($scope, "data");
 
 			// check if user is logged in
   			var authData = ref.getAuth();
-  			console.log("authData: " + JSON.stringify(authData));
 			if (!authData){
 				$state.go('login');
 			} else {
@@ -30,13 +30,15 @@
   				$state.go('login');
   			};
 
-  			// add menu item
-  			$scope.addMenuItem = function(){
-  				$scope.nav.$add({
-  					title: $scope.newNavTitle,
-  					url: $scope.newNavUrl
-  				})
-  			}
+  			// save data
+  			// $scope.saveData = function(){
+  			// 	$scope.intro.$save().then(function(data){
+  			// 		console.log('Data saved');
+  			// 		console.log(data.key());
+  			// 	}).catch(function(error){
+  			// 		console.log('Error');
+  			// 	});
+  			// };
 
   		}]
 	);
