@@ -29,11 +29,11 @@
   				$state.go('login');
   			};
 
-  			// add menu item
+  			// add new menu item
   			$scope.addMenuItem = function(){
   				$scope.nav.$add({
-  					title: $scope.newNavTitle,
-  					url: $scope.newNavUrl
+  					title 	: $scope.newNavTitle,
+  					url 	: $scope.newNavUrl
   				})
   			}
 

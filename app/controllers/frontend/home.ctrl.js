@@ -13,7 +13,7 @@
          	// define Intro data object
 			var obj = $firebaseObject(ref.child("home").child('intro'));
 
-         	// add three-way data binding
+         	// add three-way data binding to scope
 			obj.$bindTo($scope, "intro");
 
   		}]

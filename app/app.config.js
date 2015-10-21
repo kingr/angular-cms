@@ -76,5 +76,18 @@ function config($stateProvider, $urlRouterProvider) {
                 }
             },
             controller: 'home.nav.ctrl'
+        })
+
+        .state('addPost', {
+            url:'/add',
+            views: {
+                'navigation': {
+                    templateUrl: '/app/views/templates/navigationAdmin.html',
+                },
+                'body':{
+                    templateUrl: '/app/views/admin/addPost.html',
+                }
+            },
+            controller: 'addPost.admin.ctrl'
         });
 }

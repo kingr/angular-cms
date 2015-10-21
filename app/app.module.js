@@ -19,7 +19,8 @@ angular
         =================================== */
         'home.admin.ctrl',
         'login.admin.ctrl',
-        'nav.admin.ctrl'
+        'nav.admin.ctrl',
+        'addPost.admin.ctrl'
         
         
     ]);
