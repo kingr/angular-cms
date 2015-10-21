@@ -1,4 +1,4 @@
-<section class="adminWrapper" ng-controller="home.admin.ctrl as admin" gutterContent>
+<section class="adminWrapper" ng-controller="nav.admin.ctrl as nav" gutterContent>
 	<h3>Navigation</h3>
 	<br>
 	<table class="feNavTbl">
@@ -7,15 +7,21 @@
 				<table>
 					<tr>
 						<td>Title:</td>
-						<td><input ng-model="navItem.title" ng-change="messages.$save(message)" /></td>
+						<td>
+							<input ng-model="navItem.title" ng-change="messages.$save(message)" />
+						</td>
 					</tr>
 					<tr>
 						<td>Route:</td>
-						<td><input ng-model="navItem.url" ng-change="messages.$save(message)" /></td>
+						<td>
+							<input ng-model="navItem.url" ng-change="messages.$save(message)" />
+						</td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
-						<td><button ng-click="nav.$remove(navItem)">delete</button><button ng-click="nav.$save(navItem)">update</button></td>
+						<td>
+							<button ng-click="nav.$remove(navItem)">delete</button><button ng-click="nav.$save(navItem)">update</button>
+						</td>
 					</tr>
 				</table>	
 			</td>

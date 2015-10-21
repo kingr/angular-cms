@@ -6,39 +6,29 @@
 
 	home.controller('home.admin.ctrl', ['$scope','$firebaseObject', '$state' ,'firebaseInit',
     	function($scope, $firebaseObject, $state, firebaseInit) {
-    		// open conn
-    		var ref = firebaseInit;
+    	   
+         // open conn
+    	   var ref = firebaseInit;
 
-			// nav dataset
-			// var refIntro = ; 
+         // define Intro data object
+			   var obj = $firebaseObject(ref.child("home").child('intro'));
 
-			var obj = $firebaseObject(ref.child("home").child('intro'));
+         // add three-way data binding
+			   obj.$bindTo($scope, "data");
 
-			obj.$bindTo($scope, "data");
+			   // check if user is logged in
+  			 var authData = ref.getAuth();
+    		 if (!authData){
+    				$state.go('login');
+    		 } else {
+    				$scope.access = "Granted";
+    		 }
 
-			// check if user is logged in
-  			var authData = ref.getAuth();
-			if (!authData){
-				$state.go('login');
-			} else {
-				$scope.access = "Granted";
-			}
-
-			// logout
-  			$scope.logout = function(){
-  				ref.unauth();
-  				$state.go('login');
-  			};
-
-  			// save data
-  			// $scope.saveData = function(){
-  			// 	$scope.intro.$save().then(function(data){
-  			// 		console.log('Data saved');
-  			// 		console.log(data.key());
-  			// 	}).catch(function(error){
-  			// 		console.log('Error');
-  			// 	});
-  			// };
+			   // logout
+  			 $scope.logout = function(){
+  			   ref.unauth();
+  			   $state.go('login');
+  			 };
 
   		}]
 	);
