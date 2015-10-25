@@ -5,7 +5,8 @@ angular
         'firebase',
         'firebaseInit',
         'ui.router',
-        
+        'ngWig',
+         
         /* ================================
             frontend controllers 
         =================================== */

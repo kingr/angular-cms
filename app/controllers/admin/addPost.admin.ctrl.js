@@ -40,7 +40,7 @@
          $scope.addNewPost = function(){
           $scope.posts.$add({
             postTitle       : $scope.postTitle,
-            postDesc        : $scope.postDesc,
+            postDesc        : $scope.content,
             postCategory    : $scope.data.repeatSelect,
             timestamp       : Firebase.ServerValue.TIMESTAMP
           }).then(function(){
