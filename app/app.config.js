@@ -89,5 +89,18 @@ function config($stateProvider, $urlRouterProvider) {
                 }
             },
             controller: 'addPost.admin.ctrl'
+        })
+
+        .state('media', {
+            url:'/media',
+            views: {
+                'navigation': {
+                    templateUrl: '/app/views/templates/navigationAdmin.html',
+                },
+                'body':{
+                    templateUrl: '/app/views/admin/media.html',
+                }
+            },
+            controller: 'media.admin.ctrl'
         });
 }

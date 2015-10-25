@@ -20,7 +20,7 @@ angular
         'home.admin.ctrl',
         'login.admin.ctrl',
         'nav.admin.ctrl',
-        'addPost.admin.ctrl'
-        
+        'addPost.admin.ctrl',
+        'media.admin.ctrl'
         
     ]);
