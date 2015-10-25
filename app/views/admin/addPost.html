@@ -1,12 +1,14 @@
 <section ng-controller="addPost.admin.ctrl as addPost" gutterContent>
 
+	<h3>Add a new post</h3>
+
 	<form ng-submit="addNewPost()">
 
 		<input ng-model="postTitle" placeholder="Post title">
 		<br>
 		<label for="repeatSelect"> Category: </label>
 	    <select name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect">
-	      <option ng-repeat="option in data.availableOptions" value="{{option.name}}">{{option.name}}</option>
+	      <option ng-repeat="option in data.availableOptions" value="{{option.name}}" >{{option.name}}</option>
 	    </select>
 
 		<input ng-model="postDesc" placeholder="Tell a story">

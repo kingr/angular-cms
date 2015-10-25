@@ -26,10 +26,12 @@
          categoriesData.$loaded().then(function() {
             // loop over object
             angular.forEach(categoriesData, function(value, key) {
+              
               // push data to array
-              categoriesArray.push({name: value.title})
-
-              console.log(value.title);
+              if (value.title !== undefined) {
+                categoriesArray.push({name: value.title})
+                console.log(value.title);
+              }
               
             });
          });
