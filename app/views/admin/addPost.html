@@ -2,16 +2,30 @@
 
 	<h3>Add a new post</h3>
 
+	<br>
+
 	<form ng-submit="addNewPost()">
 
 		<input ng-model="postTitle" placeholder="Post title">
-		<br>
+
+		<br><br>
+
 		<label for="repeatSelect"> Category: </label>
+		
+		<br>
+
+		<!-- select category -->
 	    <select name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect">
 	      <option ng-repeat="option in data.availableOptions" value="{{option.name}}" >{{option.name}}</option>
 	    </select>
-
+	    
+	    <br><br>
+		
+		<!-- wysiwig editor -->	
 		<textarea ng-wig="content"></textarea>
+		
+		<br>
+		
 		<button type="submit">Post</button>
 
 	</form>
