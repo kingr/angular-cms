@@ -209,6 +209,9 @@ nav ul ul li {
 nav ul ul li:last-child {
   padding-bottom: 12px;
 }
+.adminNav li {
+  width: 21%;
+}
 /* ================================
 		CONTENT 
 =================================== */

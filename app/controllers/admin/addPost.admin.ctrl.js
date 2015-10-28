@@ -45,6 +45,11 @@
             timestamp       : Firebase.ServerValue.TIMESTAMP
           }).then(function(){
             alert('Success!');
+
+            // clear form values
+            $scope.postTitle = '';
+            $scope.content = '';
+
           }, function(){
             alert('Fail');
           });
